@@ -4,6 +4,7 @@ module Refinery
       def initalize(name, options = {})
         @name = name
         @users = options[:users] || (defined?(Refinery::User) && Refinery::User.all)
+      end
       
       def generate
         @users.each do |user|
