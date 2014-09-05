@@ -3,8 +3,7 @@ module Refinery
     class PluginGenerator
       def initalize(name, options = {})
         @name = name
-        @users = options[:users] || Refinery::User.all if defined?(Refinery::User)
-      end
+        @users = options[:users] || (defined?(Refinery::User) && Refinery::User.all)
       
       def generate
         @users.each do |user|
